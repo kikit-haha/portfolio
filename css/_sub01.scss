@@ -1,0 +1,12 @@
+@charset "utf-8";
+article.cont {
+  width: 1200px;
+  height: 100vh;
+  position: relative;
+}
+.cont:nth-child(2n-1) {
+  background-color: #b4d7ff;
+}
+.cont:nth-child(2n) {
+  background-color: #fcd09e;
+}

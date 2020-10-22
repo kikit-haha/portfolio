@@ -1,0 +1,473 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1f1f1f;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Roboto", "Noto-sans", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/*헤더영역 서식 시작*/
+header {
+  width: 100%;
+  height: 100vh;
+  background-color: antiquewhite;
+  position: relative;
+}
+
+header > h1,
+header > div,
+header > ul,
+header > p {
+  position: absolute;
+}
+
+header > h1 {
+  top: 0px;
+  left: 0px;
+}
+
+.bar {
+  position: absolute;
+  height: 1px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.bar01 {
+  width: 50px;
+  background-color: #1f1f1f;
+  top: 30%;
+  right: 0;
+}
+
+.bar02 {
+  width: 70px;
+  background-color: #1f1f1f;
+  top: 50%;
+  right: 0;
+}
+
+/* 플러스 버튼 서식*/
+header > .more_btn {
+  position: relative;
+  top: 50%;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*토글버튼 서식*/
+header > .toggle {
+  width: 100px;
+  height: 100px;
+  /* background-color: #818s181; */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  z-index: 9999;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.toggle:hover .bar {
+  width: 60px;
+}
+
+.toggle.active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.toggle.active:hover .bar01 {
+  width: 90px;
+  -webkit-transform: rotate(0deg) !important;
+          transform: rotate(0deg) !important;
+}
+
+.toggle.active:hover .bar02 {
+  display: none;
+}
+
+.toggle.active .bar02 {
+  width: 60px;
+  -webkit-transform: rotate(-45deg) translateY(-14px);
+          transform: rotate(-45deg) translateY(-14px);
+}
+
+.toggle.active .bar01 {
+  width: 60px;
+  -webkit-transform: rotate(45deg) translateY(14px);
+          transform: rotate(45deg) translateY(14px);
+}
+
+.gnb_wrap {
+  width: 50vw;
+  height: 100vh;
+  background-color: #ff5c5c;
+  position: fixed;
+  right: -50vw;
+  top: 0;
+  z-index: 9000;
+}
+
+.gnb {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 20%;
+}
+
+.gnb a {
+  text-transform: uppercase;
+  font-size: 6rem;
+  line-height: 1.8em;
+  display: block;
+}
+
+.gnb a::before {
+  content: '';
+  display: inline-block;
+  width: 200px;
+  height: 1px;
+  background-color: #1f1f1f;
+  margin: 0 10px 5% 0;
+}
+
+.gnb a.inactive {
+  font-size: 4rem;
+  line-height: 1.6em;
+  color: #434343;
+}
+
+.gnb a.inactive::before {
+  width: 150px;
+  margin: 0 10px 3% 0;
+  background-color: #434343;
+}
+
+.gnb a.active {
+  font-size: 7rem;
+  line-height: 1.8em;
+}
+
+.gnb a.active::before {
+  width: 230px;
+  height: 1px;
+  background-color: #1f1f1f;
+}
+
+@-webkit-keyframes rotate_more_btn {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_more_btn {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.more_bar_top {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #1f1f1f;
+}
+
+.more_bar_bottom {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background-color: #1f1f1f;
+}
+
+.more_btn:hover {
+  -webkit-animation: rotate_more_btn 4s linear infinite;
+          animation: rotate_more_btn 4s linear infinite;
+}
+
+.more_menu {
+  bottom: 10px;
+  left: 0px;
+  width: 100vw;
+  height: 100px;
+  background-color: rgba(31, 31, 31, 0.9);
+  font-size: 40px;
+  display: none;
+}
+
+.more_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 700px;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.more_menu ul li > a {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/*오른쪽 상단 메뉴*/
+.top_menu {
+  top: 0px;
+  right: 0px;
+  background-color: #79001a;
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*콘텐츠영역 서식 시작*/
+section {
+  width: 100%;
+  background-color: #dddddd;
+}
+
+.project {
+  height: 300vh;
+  width: 1200px;
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffd1d8;
+}
+
+.project figure {
+  position: absolute;
+}
+
+.project figure:first-child {
+  width: 520px;
+  top: 4%;
+  left: 6%;
+}
+
+.project figure:nth-child(2) {
+  top: 21%;
+  right: 7%;
+}
+
+.project figure:nth-child(3) {
+  top: 40%;
+  left: 6%;
+}
+
+.project figure:nth-child(4) {
+  top: 52%;
+  right: 7%;
+}
+
+.project figure:last-child {
+  top: 73%;
+  left: 9%;
+}
+
+article.introduce01 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 95vh;
+  background-color: #c7e3ff;
+}
+
+/*푸터영역 서식 시작*/
+footer {
+  width: 100%;
+  height: 5vh;
+  background-color: #727272;
+}
+
+article.cont {
+  width: 1200px;
+  height: 100vh;
+  position: relative;
+}
+
+.cont:nth-child(2n-1) {
+  background-color: #b4d7ff;
+}
+
+.cont:nth-child(2n) {
+  background-color: #fcd09e;
+}
+/*# sourceMappingURL=main.css.map */
