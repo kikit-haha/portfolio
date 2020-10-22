@@ -156,6 +156,16 @@ header {
   position: relative;
 }
 
+.status {
+  background-color: mediumvioletred;
+  font-color: #fff;
+  width: 100px;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
 header > h1,
 header > div,
 header > ul,
@@ -189,30 +199,11 @@ header > h1 {
   right: 0;
 }
 
-/* 플러스 버튼 서식*/
-header > .more_btn {
-  position: relative;
-  top: 50%;
-  left: 0px;
-  width: 100px;
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 /*토글버튼 서식*/
-header > .toggle {
+.toggle {
   width: 100px;
   height: 100px;
-  /* background-color: #818s181; */
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 10px;
   z-index: 9999;
@@ -274,6 +265,9 @@ header > .toggle {
   font-size: 6rem;
   line-height: 1.8em;
   display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #505050;
 }
 
 .gnb a::before {
@@ -288,24 +282,46 @@ header > .toggle {
 .gnb a.inactive {
   font-size: 4rem;
   line-height: 1.6em;
-  color: #434343;
+  color: #c4c4c4;
 }
 
 .gnb a.inactive::before {
   width: 150px;
   margin: 0 10px 3% 0;
-  background-color: #434343;
+  background-color: #c4c4c4;
 }
 
 .gnb a.active {
   font-size: 7rem;
   line-height: 1.8em;
+  color: #000000;
 }
 
 .gnb a.active::before {
   width: 230px;
   height: 1px;
-  background-color: #1f1f1f;
+  background-color: #000000;
+}
+
+/* 하단 더보기 버튼 */
+.more_btn {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 @-webkit-keyframes rotate_more_btn {
@@ -322,6 +338,11 @@ header > .toggle {
   }
 }
 
+.more_btn:hover {
+  -webkit-animation: rotate_more_btn 4s linear infinite;
+          animation: rotate_more_btn 4s linear infinite;
+}
+
 .more_bar_top {
   position: absolute;
   top: 50%;
@@ -329,6 +350,7 @@ header > .toggle {
   width: 100%;
   height: 1px;
   background-color: #1f1f1f;
+  opacity: 1;
 }
 
 .more_bar_bottom {
@@ -340,46 +362,92 @@ header > .toggle {
   background-color: #1f1f1f;
 }
 
-.more_btn:hover {
-  -webkit-animation: rotate_more_btn 4s linear infinite;
-          animation: rotate_more_btn 4s linear infinite;
+.more_btn.active:hover {
+  -webkit-animation: rotate_more_btn 6s linear infinite;
+          animation: rotate_more_btn 6s linear infinite;
 }
 
-.more_menu {
-  bottom: 10px;
+.more_btn.active .more_bar {
+  background-color: #fff;
+}
+
+.more_btn.active .more_bar_top {
+  opacity: 0;
+}
+
+.more_btn.active .more_bar_bottom {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.menu {
+  position: fixed;
+  bottom: 0px;
   left: 0px;
-  width: 100vw;
+  padding-left: 0px;
+  width: 0vw;
   height: 100px;
   background-color: rgba(31, 31, 31, 0.9);
   font-size: 40px;
-  display: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 9000;
 }
 
-.more_menu ul {
+.menu.active {
+  padding-left: 120px;
+  width: 100vw;
+}
+
+.menu.active a {
+  opacity: 1;
+}
+
+.menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 700px;
-  height: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.more_menu ul li > a {
+.menu ul li {
+  width: 16%;
+  height: 100px;
+}
+
+.menu ul li > a {
   text-transform: uppercase;
   color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: block;
+  line-height: 100px;
+  text-align: center;
+  opacity: 0;
+  font-size: 1.6rem;
+}
+
+.menu ul li > a:hover {
+  font-size: 1.8rem;
 }
 
 /*오른쪽 상단 메뉴*/
 .top_menu {
   top: 0px;
   right: 0px;
-  background-color: #79001a;
-  width: 80px;
-  height: 80px;
+  background-color: #031545;
+  width: 160px;
+  height: 160px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,14 +459,45 @@ header > .toggle {
           align-items: center;
 }
 
+.top_menu a {
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  line-height: 1.6em;
+}
+
+/* 진행 바 서식*/
+.progress {
+  position: fixed;
+  left: 60px;
+  top: 20vh;
+  width: 1px;
+  height: 60vh;
+  background-color: #808080;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.progress_bar {
+  position: absolute;
+  background-color: #ff4848;
+  width: 1.4px;
+  height: 80vh;
+}
+
 /*콘텐츠영역 서식 시작*/
 section {
   width: 100%;
-  background-color: #dddddd;
+  height: 365vh;
+  background-color: #dedede;
 }
 
 .project {
-  height: 300vh;
+  height: 270vh;
   width: 1200px;
   position: relative;
   width: 1200px;
@@ -406,32 +505,33 @@ section {
   background-color: #ffd1d8;
 }
 
-.project figure {
+figure {
   position: absolute;
 }
 
-.project figure:first-child {
+.project01 {
+  opacity: 0;
   width: 520px;
   top: 4%;
   left: 6%;
 }
 
-.project figure:nth-child(2) {
+.project02 {
   top: 21%;
   right: 7%;
 }
 
-.project figure:nth-child(3) {
+.project03 {
   top: 40%;
   left: 6%;
 }
 
-.project figure:nth-child(4) {
+.project04 {
   top: 52%;
   right: 7%;
 }
 
-.project figure:last-child {
+.project05 {
   top: 73%;
   left: 9%;
 }
@@ -454,7 +554,7 @@ article.introduce01 {
 footer {
   width: 100%;
   height: 5vh;
-  background-color: #727272;
+  background-color: #505050;
 }
 
 article.cont {
