@@ -1,12 +1,13 @@
 @charset "utf-8";
 article.cont {
-  width: 1200px;
-  height: 100vh;
-  position: relative;
+	width: 1200px;
+	height: 100vh;
+	position: relative;
+	margin: 0 auto;
 }
 .cont:nth-child(2n-1) {
-  background-color: #b4d7ff;
+	background-color: #b4d7ff;
 }
 .cont:nth-child(2n) {
-  background-color: #fcd09e;
+	background-color: #fcd09e;
 }

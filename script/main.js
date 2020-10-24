@@ -46,12 +46,11 @@ $(document).ready(function () {
 	//윈도우 리사이즈 이벤트
 	function resizeThis() {
 		$(window).resize(function () {
-			var bHeight = $('body').innerHeight;
-			var height = window.outerHeight;
-			var width = window.outerWidth;
-			console.log('바디높이' + bHeight)
-			console.log('높이' + height);
-			console.log('너비' + width);
+			var height = window.innerHeight;
+			var width = window.innerHeight;
+			// console.log('바디높이' + bHeight)
+			// console.log('높이' + height);
+			// console.log('너비' + width);
 		})
 	}
 	resizeThis();
@@ -85,14 +84,16 @@ $(document).ready(function () {
 	})
 	// 마우스따라서 회전하는 기능
 	var mousePos={x:0,y:0};
-	var sectionHeight=$('figure').innerHeight();
-	var sectionWidth=$('figure').innerWidth();
-	$('figure').mousemove(function(e){
-		console.log(e.pageX);
-		console.log(sectionHeight);
+	var sectionHeight=$('section').innerHeight();
+	var sectionWidth=$('section').innerWidth();
+	$('section').mousemove(function(e){
+		// console.log(e.pageX);
+		// console.log(sectionHeight);
 		mousePos.x = -1+(e.pageX/sectionWidth*2);
 		mousePos.y = 1-(e.pageY/sectionHeight*2);
-		console.log(mousePos.x,mousePos.y);
-$('figure img').css('transform','rotateY('+mousePos.x*3+'deg) rotateX('+mousePos.y*3+'deg)')
+		// console.log(mousePos.x,mousePos.y);
+    $('figure').css('transform','rotateY('+mousePos.x*10+'deg) rotateX('+mousePos.y*10+'deg)');
+		
+
 	});
 });
