@@ -1,20 +1,34 @@
 @charset "utf-8";
 $black: #1b1b1b;
-$darkgray:#212121;
-$middarkgray:#272727;
+$darkgray: #212121;
+$middarkgray: #272727;
 $lightgray: #d1d1d1;
 $white: #fff;
+$purple: #7f7b96;
+$peach: #b45a42;
+$pink: #bb7f7f;
+$yellow: #c17e27;
+$green: #566e32;
+$blue: #325b6d;
+$gray20: #231f20;
 
 body {
-	background-color: #212121;
+	background-color: $darkgray;
+	overflow-x: hidden;
 }
 
 /*헤더영역 서식 시작*/
 header {
 	width: 100%;
-	height: 100vh;
-	background-color: $lightgray;
-	position: relative;
+	//	height: 100vh;
+	background-color: #181818;
+	//	position: relative;
+
+
+	p {
+		font-size: 1.6rem;
+		width: 30vw;
+	}
 }
 
 .status {
@@ -27,38 +41,22 @@ header {
 	right: 0;
 }
 
-header > h1,
-header > div,
-header > ul,
+
+
+
 header > p {
-	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+
+	align-items: center;
 }
 
 header > h1 {
+	position: fixed;
 	top: 0px;
 	left: 0px;
-}
-
-.bar {
-	position: absolute;
-	height: 1px;
-	transition: 0.3s;
-}
-
-.bar01 {
-	width: 50px;
-
-	background-color: $black;
-	top: 30%;
-	right: 0;
-}
-
-.bar02 {
-	width: 70px;
-
-	background-color: $black;
-	top: 50%;
-	right: 0;
 }
 
 /*토글버튼 서식*/
@@ -71,6 +69,27 @@ header > h1 {
 	right: 10px;
 	z-index: 9999;
 	transition: 0.5s;
+}
+
+.bar {
+	position: absolute;
+	height: 1px;
+	transition: 0.3s;
+}
+
+.bar01 {
+	width: 50px;
+	background-color: $lightgray;
+	top: 30%;
+	right: 0;
+}
+
+.bar02 {
+	width: 70px;
+
+	background-color: $lightgray;
+	top: 50%;
+	right: 0;
 }
 
 .toggle:hover .bar {
@@ -100,14 +119,6 @@ header > h1 {
 	transform: rotate(45deg) translateY(14px);
 }
 
-//
-//.bar01.active:hover {
-//	width: 100px;
-//}
-//
-//.bar02.active:hover {
-//	display: none;
-//}
 .gnb_wrap {
 	width: 50vw;
 	height: 100vh;
@@ -126,7 +137,7 @@ header > h1 {
 
 	a {
 		text-transform: uppercase;
-		font-size: 6rem;
+		font-size: 3rem;
 		line-height: 1.8em;
 		display: block;
 		transition: 0.5s;
@@ -142,7 +153,7 @@ header > h1 {
 		}
 
 		&.inactive {
-			font-size: 4rem;
+			font-size: 2rem;
 			line-height: 1.6em;
 			color: $lightgray;
 		}
@@ -154,7 +165,7 @@ header > h1 {
 		}
 
 		&.active {
-			font-size: 7rem;
+			font-size: 4rem;
 			line-height: 1.8em;
 			color: #000000;
 		}
@@ -167,14 +178,29 @@ header > h1 {
 	}
 }
 
+/*프로필 이미지 서식*/
+.profile {
+	position: absolute;
+	width: 20vw;
+	height: auto;
+	top: 50%;
+	right: 20vw;
+	transform: translateY(-50%);
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
 /* 하단 더보기 버튼 */
 .more_btn {
-	width: 80px;
-	height: 80px;
+	width: 40px;
+	height: 40px;
 	position: fixed;
 	//	position: absolute;
-	bottom: 10px;
-	left: 10px;
+	bottom: 0px;
+	left: 40px;
 	z-index: 9999;
 	display: flex;
 	justify-content: center;
@@ -198,7 +224,7 @@ header > h1 {
 	left: 0;
 	width: 100%;
 	height: 1px;
-	background-color: $black;
+	background-color: $lightgray;
 	opacity: 1;
 }
 
@@ -208,7 +234,7 @@ header > h1 {
 	height: 100%;
 	left: 50%;
 	top: 0;
-	background-color: $black;
+	background-color: $lightgray;
 }
 
 //하단 더보기 버튼 액티브 클래스 추가 후
@@ -235,7 +261,7 @@ header > h1 {
 	left: 0px;
 	padding-left: 0px;
 	width: 0vw;
-	height: 100px;
+	height: 40px;
 	background-color: rgba(31, 31, 31, 0.9);
 	font-size: 40px;
 	//	display: none;
@@ -255,15 +281,15 @@ header > h1 {
 	ul {
 		display: flex;
 		width: 100%;
-		height: 100px;
+		height: 40px;
 		justify-content: flex-start;
 		align-items: center;
 		flex-wrap: wrap;
 
 		//		display: none;
 		li {
-			width: 16%;
-			height: 100px;
+			width: 14%;
+			height: 40px;
 		}
 
 		li > a {
@@ -271,10 +297,10 @@ header > h1 {
 			color: $white;
 			transition: 0.2s;
 			display: block;
-			line-height: 100px;
+			line-height: 40px;
 			text-align: center;
 			opacity: 0;
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 		}
 
 		li > a:hover {
@@ -286,9 +312,10 @@ header > h1 {
 /*오른쪽 상단 메뉴*/
 .top_menu {
 	top: 0px;
-	right: 0px;
+	left: 90vw;
+	position: relative;
 	background-color: #031545;
-	width: 160px;
+	width: 10vw;
 	height: 160px;
 	display: flex;
 	justify-content: center;
@@ -306,81 +333,32 @@ header > h1 {
 .progress {
 	position: fixed;
 	left: 60px;
-	top: 20vh;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 1px;
-	height: 60vh;
+	height: 230px;
 	background-color: #808080;
 	display: flex;
 	justify-content: center;
+	z-index: 9000;
 }
 
 .progress_bar {
 	position: absolute;
 	background-color: #ff7e7e;
 	width: 1.4px;
-	height: 80vh;
+	height: 0px;
+	z-index: 9999;
 }
 
-/*콘텐츠영역 서식 시작*/
-
-section {
-	width: 100%;
-	height: 365vh;
-	background-color: #212121
-}
-
-.project_wrap {
-	height: 270vh;
-	width: 1200px;
-	position: relative;
-	width: 1200px;
-	margin: 0 auto;
-	background-color: #272727;
-}
-
-figure {
-	position: absolute;
-}
-
-.project01 {
-	//	display: none;
-	opacity: 0;
-	width: 520px;
-	top: 4%;
-	left: 6%;
-}
-
-.project02 {
-	top: 21%;
-	right: 7%;
-}
-
-.project03 {
-	top: 40%;
-	left: 6%;
-}
-
-.project04 {
-	top: 52%;
-	right: 7%;
-}
-
-.project05 {
-	top: 73%;
-	left: 9%;
-}
-
-article.introduce01 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 95vh;
-	background-color: #c7e3ff;
-}
 
 /*푸터영역 서식 시작*/
 footer {
 	width: 100%;
 	height: 5vh;
 	background-color: $darkgray;
+	line-height: 5vh;
+	text-align: right;
+	font-size: 0.8rem;
+	padding-right: 20px;
 }

@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import 'reset';
+@import 'base';
+@import 'layout';
+
+// 컨텐츠영역 서식
+.section_inner {
+	width: 1200px;
+	margin: 0px auto;
+}
+article {
+	width: 100%;
+	overflow-x: hidden;
+
+	img {
+		width: 100%;
+	}
+}
+.cont_title {
+	width: 100vw;
+	background-color: #000;
+	text-align: center;
+	img {
+		width: 60%;
+	}
+	h2 {
+		font-size: 0px;
+	}
+}

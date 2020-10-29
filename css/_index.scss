@@ -1,0 +1,219 @@
+/*콘텐츠영역 서식 시작*/
+
+section {
+	width: 100%;
+	// height: 365vh;
+	background-color: #212121;
+	position: relative;
+}
+
+.dot {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: $white;
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	right: 20vw;
+}
+
+//introduce 서식
+.introduce_wrap {
+	width: 100vw;
+	height: 100vh;
+}
+
+.introduce {
+	width: 80vw;
+	height: 100vh;
+	background-color: $black;
+	z-index: 3;
+	margin: 0 auto;
+
+	&.fix {
+		//		width: 100vw;
+		position: fixed;
+		top: 0px;
+		left: 50%;
+		transform: translateX(-50%);
+
+	}
+
+	.intro {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100vh;
+		font-size: 1.6rem;
+		opacity: 0;
+	}
+}
+
+.intro_00.active,
+.intro_01.active,
+.intro_02.active,
+.intro_03.active {
+	opacity: 1;
+}
+
+
+
+// project 서식
+.project_wrap {
+	height: 270vh;
+	position: relative;
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #272727;
+	perspective: 1000px;
+}
+
+figure.project {
+	position: absolute;
+	overflow: hidden;
+	transform-style: preserve-3d;
+
+	img {
+
+		transition: 0.3s;
+	}
+}
+
+figcaption {
+	position: absolute;
+	bottom: 0%;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+figcaption a {
+	width: 100%;
+	height: 100%;
+	background-color: $darkgray;
+	color: $white;
+	font-size: 1.3rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	transition: 0.3s cubic-bezier(0.27, 0.58, 0.36, 1);
+
+	opacity: 0;
+
+	small {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 0.8em;
+		font-weight: 300;
+		margin-bottom: 1em;
+	}
+}
+
+figure:hover {
+	a {
+		opacity: 0.85;
+	}
+
+	img {
+		transform: scale(1.02);
+	}
+}
+
+.project01 {
+	//	display: none;
+	//	opacity: 0;
+	width: 600px;
+	height: 375px;
+	top: 4%;
+	left: 6%;
+
+	img {
+		object-fit: cover;
+		height: 100%;
+	}
+}
+
+.project02 {
+	top: 21%;
+	right: 7%;
+	width: 500px;
+	height: 375px;
+	background-color: #769687;
+	box-shadow: 5px 6x 8px $black;
+
+	img {
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		//		top: 50%;
+		//		left: 20%;
+		//		transform: translateY(-50%);
+	}
+}
+
+.project03 {
+	top: 40%;
+	left: 6%;
+	width: 500px;
+	height: 375px;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.project04 {
+	top: 57%;
+	right: 7%;
+	width: 550px;
+	height: 440px;
+
+	img {
+		height: 100%;
+		position: fixed;
+		top: 0%;
+		left: 0%;
+
+		//		top: 50%;
+		//		left: 20%;
+		//		transform: translateY(-50%);
+	}
+}
+
+.project05 {
+	top: 75%;
+	left: 9%;
+	width: 750px;
+	height: 420px;
+	overflow: hidden;
+
+	img {
+		height: 100%;
+		position: fixed;
+		top: 0%;
+		left: 0%;
+
+		//		top: 50%;
+		//		left: 20%;
+		//		transform: translateY(-50%);
+	}
+
+}
+
+article.introduce01 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 95vh;
+	background-color: $lightgray;
+}

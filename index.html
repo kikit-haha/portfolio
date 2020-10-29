@@ -2,7 +2,8 @@
 <html lang="ko">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" initial-scale="1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>HYEONJEONG</title>
@@ -19,7 +20,7 @@
 		<header>
 			<div class="status"></div>
 			<h1>
-				<a href="#" title="메인페이지로 이동">
+				<a href="index.html" title="메인페이지로 이동">
 					<img src=" http://placehold.it/100x100" alt="로고" />
 				</a>
 			</h1>
@@ -32,12 +33,13 @@
 			<div class="top_menu">
 				<nav>
 					<ul>
-						<li><a href="#">project</a></li>
+						<li><a href="./sub/cont_list.html" title="프로젝트 리스트">project</a></li>
 						<li><a href="#">about</a></li>
 						<li><a href="#">contact</a></li>
 					</ul>
 				</nav>
 			</div>
+
 			<!--		하단 더보기 버튼-->
 			<div class="more_btn">
 				<div class="more_bar more_bar_top"></div>
@@ -54,10 +56,13 @@
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque qui quo quas numquam dicta,
 				nemo quibusdam nihil corrupti
 			</p>
+			<div class="profile">
+				<!--			<img src="./image/profile.jpg" alt="프로필사진">-->
+			</div>
 			<div class="gnb_wrap">
 				<nav class="gnb">
 					<ul>
-						<li><a href="#">project</a></li>
+						<li><a href="./sub/cont_list.html" title="프로젝트 리스트">project</a></li>
 						<li><a href="#">about</a></li>
 						<li><a href="#">contact</a></li>
 					</ul>
@@ -69,28 +74,45 @@
 		</header>
 		<!--콘텐츠 영역 시작-->
 		<section>
+			<div class="dot"></div>
+			<article class="introduce_wrap">
+				<div class="introduce">
+					<div class="intro intro_00">안녕하세요</div>
+					<div class="intro intro_01">Lorem ipsum dolor sit amet consectetur</div>
+					<div class="intro intro_02">노현정입니다</div>
+					<div class="intro intro_03">소개글</div>
+				</div>
+			</article>
 			<article class="project_wrap">
 				<figure class="project project01">
-					<a href="./sub/sub01.html" title=""
-						><img src="http://placehold.it/520x704" alt="포트폴리오1"
-					/></a>
-					<figcaption>BLACKYAK 적응형 웹</figcaption>
+					<img src="./image/mockup_01_03.jpg" alt="포트폴리오1" />
+					<figcaption>
+						<a href="./sub/sub01.html" title=""><small>Adaptive Web, 2020</small>BLACKYAK</a>
+					</figcaption>
 				</figure>
 				<figure class="project project02">
-					<img src="http://placehold.it/380x570" alt="포트폴리오1" />
-					<figcaption>JO MALONE</figcaption>
+					<img src="./image/mockup_02_2.jpg" alt="포트폴리오1" />
+					<figcaption>
+						<a href="./sub/sub02.html"><small>PC Web, 2020</small>JO MALONE</a>
+					</figcaption>
 				</figure>
 				<figure class="project project03">
-					<img src="http://placehold.it/380x570" alt="포트폴리오1" />
-					<figcaption>COLDPLAY</figcaption>
+					<img src="./image/mockup_03_03.jpg" alt="포트폴리오1" />
+					<figcaption>
+						<a href="./sub/sub02.html"><small>PC Web, 2020</small>COLDPLAY</a>
+					</figcaption>
 				</figure>
 				<figure class="project project04">
-					<img src="http://placehold.it/520x704" alt="포트폴리오1" />
-					<figcaption>PAPA JOHNS 모바일 웹</figcaption>
+					<img src="./image/mockup_04_1.jpg" alt="포트폴리오1" />
+					<figcaption>
+						<a href="./sub/sub02.html"><small>Mobile Web, 2020</small>PAPA JOHNS</a>
+					</figcaption>
 				</figure>
 				<figure class="project project05">
-					<img src="http://placehold.it/380x570" alt="포트폴리오1" />
-					<figcaption>JEJU SHINWHA WORLD</figcaption>
+					<img src="./image/mockup_05_01.jpg" alt="포트폴리오1" />
+					<figcaption>
+						<a href="./sub/sub02.html"><small>PC Web, 2020</small>JEJU SHINWHA WORLD</a>
+					</figcaption>
 				</figure>
 			</article>
 			<article class="introduce01">
@@ -106,6 +128,7 @@
 			<div class="ver"></div>
 			<div class="hor"></div>
 		</div>
+		<script src="script/layout.js"></script>
 		<script src="script/main.js"></script>
 	</body>
 </html>
